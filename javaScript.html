@@ -1,0 +1,167 @@
+<html>
+
+<head>
+
+<script language="javaScript">
+var score = 0;
+
+function guessing()
+{
+	var rand = Math.random()*10 + 1;
+	rand = parseInt(rand);
+	alert(rand);
+	
+	var usersGuess = -1;//prompt();
+	var numOfGuesses = 0;
+	
+	
+	while (usersGuess != rand)
+	{
+		usersGuess = prompt("please guess number between 1 and 10, you have " + (5 - numOfGuesses) + " guess remaining");
+		numOfGuesses++;
+		
+		if (usersGuess < rand) 
+		{
+			alert("your guess is too low");
+		}else if(usersGuess > rand
+		}
+			alert("your guess is too high");
+		}
+		
+		if (numOfGuesses >= 5)
+		{
+		alert("you have run out of guesses, the number was " + rand)
+			break;
+		}else if (usersGuess == rand)
+		{
+			alert("congratulations, you guessed correct, it took you " + numOfGuesses + " guesses");
+			break;
+		}
+	
+	}
+
+}
+	/*
+	while the guess isnt equivelant to the answer that was randomly assaigned
+	prompt the user each time around the loop for guess
+	count each time they guess 
+	if guess == to the asnwer then print out the number of times they took to guess and tell them the number thatwas correct 
+	then check the value again in the loop which will then terminate
+	*/
+
+	/*while (usersGuess != rand)
+	{
+		usersGuess = prompt("please guess number between 1 and 10");
+		numOfGuesses++;
+		if (usersGuess < rand) {
+			alert("your guess is too low");
+		}else if(usersGuess > rand){
+			alert("your guess is too high");
+		}
+		
+	}
+		alert("congratulations, you guessed correct, it took you " + numOfGuesses + "guesses");*/
+
+
+
+
+	
+
+}
+function greeting1()
+{
+	alert("hello");
+}
+
+function greeting2()
+{
+	var response = prompt("Please enter your name"); // is the assaignment operator, 
+	alert("Hello " + response);				 // it assaigns the element on the right to the variable "name"
+}
+
+function greeting3(){
+	var name = confirm("Do you like my really cool site?");
+	alert(name);
+	
+	if (name) {
+		alert("thank you im glad you like it");
+	}else{
+		alert("im sorry it is not satisfactory to your tastes, could you tell me how to improve?");
+	}
+}
+
+/*	
+	function guessing()
+{
+	var rand = Math.random()*10 + 1;
+	rand = parseInt(rand);
+	alert(rand);
+	
+	var usersGuess = -1;//prompt();
+	var numOfGuesses = 0;
+	alert("this is a guessing game using a seemingly random number each time");
+	/
+	while the guess isnt equivelant to the answer that was randomly assaigned
+	prompt the user each time around the loop for guess
+	count each time they guess 
+	if guess == to the asnwer then print out the number of times they took to guess and tell them the number thatwas correct 
+	then check the value again in the loop which will then terminate
+	/
+	
+
+	while (usersGuess != rand)
+	{
+		usersGuess = prompt("please guess number between 1 and 10, you have " + (5 - numOfGuesses) + " guess remaining");
+		numOfGuesses++;
+		
+		if (numOfGuesses >= 5){
+		alert("you have run out of guesses, the number was " + rand)
+			break;
+		}else if (usersGuess == rand){
+			alert("congratulations, you guessed correct, it took you " + numOfGuesses + " guesses");
+			break;
+		}
+	
+	}
+
+
+
+}
+	*/
+
+</script>
+
+</head>
+
+<body bgcolor ="#54FFB6">
+<center>
+<font color = "black" face = "Comic Sans MS">
+<h1> <b> My first javasciript </b> </h1>
+
+to return click <a href = "index.html"> link </a>
+<br/><br/>
+
+<input type = "button" value = "click for message" onclick="guessing()" />
+<hr/>
+<br/><br/><br/>
+
+<input type = "button" value = "click for message" onclick="greeting1()" />
+
+<hr/>
+<br/><br/><br/>
+
+
+<input type ="button" value ="click for message" onclick="greeting2()" />
+
+<hr/>
+<br/><br/><br/>
+<input type ="button" value ="click for confirmation" onclick="greeting3()"/>
+
+<br/><br/><br/>
+<input type="image" value = width=600 onclick ="woosh1" />
+</font>
+</center>
+</body>
+
+</html>
+
