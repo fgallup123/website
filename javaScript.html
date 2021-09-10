@@ -23,8 +23,9 @@ function guessing()
 		if (usersGuess < rand) 
 		{
 			alert("your guess is too low");
-		}else if(usersGuess > rand
 		}
+		else if(usersGuess > rand)
+		{
 			alert("your guess is too high");
 		}
 		
@@ -32,14 +33,16 @@ function guessing()
 		{
 		alert("you have run out of guesses, the number was " + rand)
 			break;
-		}else if (usersGuess == rand)
-		{
-			alert("congratulations, you guessed correct, it took you " + numOfGuesses + " guesses");
-			break;
-		}
+		}		
 	
 	}
-
+	
+	if (usersGuess == rand)
+	{
+	alert("congratulations, you guessed correct, it took you " + numOfGuesses + " guesses");
+	}
+	
+	
 }
 	/*
 	while the guess isnt equivelant to the answer that was randomly assaigned
@@ -67,7 +70,7 @@ function guessing()
 
 	
 
-}
+
 function greeting1()
 {
 	alert("hello");
