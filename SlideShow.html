@@ -1,0 +1,112 @@
+<html>
+<head>
+<script language="javaScript">
+
+var slideShowPictures = 
+[
+ "images/Characters/girl.jpg",
+ "images/Characters/boi.jpg",
+ "images/Characters/rei.jpg",
+ "images/Characters/dude.jpg",
+ "images/Characters/oldDude.jpg",
+ "images/Characters/woman.jpg"
+ ];
+ 
+var soundArray = 
+[
+ "Sounds/angelsThesis.mp3",
+ "Sounds/alapu upala.mp3",
+ "Sounds/Agnes Obel.mp3",
+ "Sounds/knock.mp3",
+ "Sounds/sirenHead.mp3",
+ "Sounds/SLPA.mp3",
+];
+
+var clipTime = [
+	265,
+	156,
+	265,
+	22,
+	57,
+	3
+];
+var counter = 0;
+var startState = false;
+var timer;
+var playerButtonState = false;
+var clipTime;
+
+function nextPic()
+{
+	incrementCounter()
+	lister();
+	document.getElementById("player").play();
+}
+
+function lister(){
+	document.getElementById("display").src= slideShowPictures[counter];
+	document.getElementById("player").src= soundArray[counter];
+}
+
+function incrementCounter()
+{ 
+	if (counter == slideShowPictures.length-1)
+	{
+		counter = 0;
+	}
+	else{
+		counter++;
+	}
+
+}
+
+
+function run()
+{
+	if(startState)
+	{
+		startState = false;
+		document.getElementById("runButton").value = "run slideshow";
+		
+	}
+	else
+	{
+		startState = true;
+		document.getElementById("runButton").value = "stop slideshow";
+	}
+	autoPlay();
+}
+
+function autoPlay(){
+	if(startState){
+		lister();
+		document.getElementById("player").play();
+		timer = setTimeout( "nextPic()", clipTime[counter] * 1000);
+	}else{
+		document.getElementById("player").src="";
+		clearTimeout(timer);
+
+	}
+}
+
+</script>
+</head>
+<body bgcolor="white" font="white">
+<center>
+<h1> My Slide Show </h1>
+click <a href = "index.html">here</a> to return to my homepage
+<br/><br/>
+
+<input id="runButton" type="button" value = "run slideshow" 
+onclick="run()"/>
+<input type="button" value = "Next picture" 
+onclick="nextPic()"/>
+<br/>
+<br/>
+<img id="display" src="images/Characters/girl.jpg" width="600"/>
+
+<audio src="" id="player"> </audio>
+
+</center>
+</body>
+</html>
