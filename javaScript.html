@@ -7,7 +7,7 @@ var score = 0;
 
 function guessing()
 {
-	var rand = Math.random()*10 + 1;
+	var rand = Math.random()*10 + -1;
 	rand = parseInt(rand);
 	alert(rand);
 	
@@ -44,6 +44,13 @@ function guessing()
 	
 	
 }
+	/*
+	while the guess isnt equivelant to the answer that was randomly assaigned
+	prompt the user each time around the loop for guess
+	count each time they guess 
+	if guess == to the asnwer then print out the number of times they took to guess and tell them the number thatwas correct 
+	then check the value again in the loop which will then terminate
+	*/
 
 	/*while (usersGuess != rand)
 	{
@@ -86,6 +93,44 @@ function greeting3(){
 	}
 }
 
+/*	
+	function guessing()
+{
+	var rand = Math.random()*10 + 1;
+	rand = parseInt(rand);
+	alert(rand);
+	
+	var usersGuess = -1;//prompt();
+	var numOfGuesses = 0;
+	alert("this is a guessing game using a seemingly random number each time");
+	/
+	while the guess isnt equivelant to the answer that was randomly assaigned
+	prompt the user each time around the loop for guess
+	count each time they guess 
+	if guess == to the asnwer then print out the number of times they took to guess and tell them the number thatwas correct 
+	then check the value again in the loop which will then terminate
+	/
+	
+
+	while (usersGuess != rand)
+	{
+		usersGuess = prompt("please guess number between 1 and 10, you have " + (5 - numOfGuesses) + " guess remaining");
+		numOfGuesses++;
+		
+		if (numOfGuesses >= 5){
+		alert("you have run out of guesses, the number was " + rand)
+			break;
+		}else if (usersGuess == rand){
+			alert("congratulations, you guessed correct, it took you " + numOfGuesses + " guesses");
+			break;
+		}
+	
+	}
+
+
+
+}
+	*/
 
 </script>
 

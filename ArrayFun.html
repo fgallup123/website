@@ -1,0 +1,42 @@
+<html>
+<head>
+<script language="javascript">
+
+var counter = 0;
+
+//Array
+var bandMates = ["John", "Paul", "George", "Ringo"];
+
+var myData[1,2,3,4,5,6,7,8,9,10];
+
+function oneTime()
+{
+/*
+	var x = 0;// Local variable so value alwasy resets
+	x = x + 1;
+	*/
+	alert(bandMates[counter]);
+	if (counter == bandMates.length-1)
+	{
+		counter = 0;
+	}else{
+	counter = counter + 1
+	}
+}
+
+function run()
+{
+	
+}
+</script>
+</head>
+<body>
+<h1>Fun with Arrays</h1>
+
+<input type ="button" value ="One Click" onclick="oneTime"/>
+
+<input type ="button" value ="One Click" onclick="run"/>
+
+</body>
+</html>
+
