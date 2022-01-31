@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<head>
+    <title>This is a site</title>
+	<script>
+		var defs = [
+		"scale of abosolute energy species controls",
+		"gravity equation",
+		"avogadros number",
+		"fine structure constant",
+		"father of modern quantum mechanics",
+		"the first implied differentiation theory"
+		];
+		
+		var terms = [
+		"kardashev scale",
+		"f=g(m1*m2/(r*r))",
+		"6.02214076*10^23",
+		"1/137",
+		"james bohr",
+		"demons"
+		];
+		var check = [
+		true,
+		true,
+		true,
+		true,
+		true,
+		true];
+		//var check = [true, false, false, false, false, false];
+		var counterQ = 0;
+		var score = 0;
+		var bool = true;
+		var rand;
+		
+		
+		/*function nextQ(){
+			//var bool = false; //document.getElementById("terms").checked;
+			console.log(bool);
+			if(bool){
+				displayCue(terms);
+				
+			}else{
+				displayCue(defs);
+				
+			}
+			document.getElementById("image").style.visibility = "hidden";
+		}*/
+		
+			function boolThing(boolRadio) {
+			var list;
+			if(boolRadio){
+				list = terms;
+				
+			}else{
+				list = defs;
+				
+			}
+			document.getElementById("image").style.visibility = "hidden";
+			return list;
+			
+		}
+		
+		function displayCue() {
+			if(bool) {
+				if(counterQ < check.length) {
+					var boolbool = document.getElementById("defs").checked;
+					//console.log(boolbool);
+					var list = boolThing(!boolbool);
+					document.getElementById("answer").value = "";
+					var counterThing = 0;
+					do {
+						//console.log(counterThing);
+						rand = parseInt(Math.random()*list.length);
+						var boolList = [];
+						for(var i=0; i<check.length; i++) {
+							if(check[i]) {
+								boolList.push(i);
+								//alert(i);
+								//console.log(boolList);
+							}
+						}
+						if(randChecker(rand, boolList)){
+							//alert("thing");
+							break;
+						}
+						//console.log(boolList.length);
+						counterThing++;
+					} while(boolList.length > 0);
+						document.getElementById("clue").value = list[rand];
+						check[rand] = false;
+						//console.log(check);
+						counterQ++;
+				}else {
+					finished();
+					//console.log("works");
+				}
+				bool = false;
+		    }
+		
+		}
+		
+		function randChecker(rand, boolList) {
+		    var rander = false;
+		    for(var i=0; i<boolList.length; i++) {
+				//console.log(boolList[i]);
+				//console.log(rand);
+				if(rand == boolList[i]) {
+					rander = true;
+					break;
+				}
+		    }
+		     
+		    return rander;
+		}
+		
+		function checkAnswer() {
+			//alert();
+		    if(!bool) {
+    			var boolbool = document.getElementById("defs").checked;
+    			var list = boolThing(boolbool);
+    			var answ = document.getElementById("answer").value;
+    			answ = answ.toLowerCase();
+				//console.log(list[rand]);
+				//console.log(answ);
+    			if(answ == list[rand]) {
+    				document.getElementById("winLoss").src = "images/success.jpeg";
+    				score++;
+					
+    			}else {
+    				document.getElementById("winLoss").src = "images/R.png"; 
+					
+    			}
+				
+    			document.getElementById("image").style.visibility = "visible";
+    			bool = true;
+		    }
+			
+		}
+		
+		function finished() {
+			document.getElementById("image").style.visibility = "hidden";
+			document.getElementById("clue").value = "Finished!";
+			document.getElementById("answer").value = parseInt((score / check.length) * 100) + "%";
+			alert("Congratulations");
+			document.getElementById("CH").value = "Reset";
+			document.getElementById("CH").onclick = reset;
+			
+		}
+		
+		function reset() {
+			//alert();
+			for(i=0; i<check.length; i++) {
+				check[i] = true;
+				
+			}
+			document.getElementById("clue").value = "Click Next to begin";
+			document.getElementById("answer").value = "";
+			document.getElementById("CH").value = "Check Answer";
+			document.getElementById("CH").onclick = checkAnswer;
+			bool = true;
+			score = 0;
+			counterQ = 0;
+			
+		}
+		
+		function devTool() {
+			for(i=0; i<check.length; i++) {
+				check[i] = false;
+				
+			}
+			score = 6;
+			bool = false;
+			counterQ = 6;
+			finished();
+		}
+		
+	</script>
+	<style> 
+		.centered {
+			position:absolute;
+			top:250px;
+			right:390px;
+			
+		}
+	</style>
+</head>
+<body>
+<center>
+<h1>Vocab Quiz</h1>
+
+<input type="radio" id="terms" name="qType" onchange="reset()"/>
+  <label for="terms">Words</label>
+<input type="radio" id="defs" name="qType" onchange="reset()" checked>
+  <label for="defs">Definitions</label>
+<input type="button" value="Next" onclick="displayCue()"/>
+
+<br/><br/>
+<input type = "text" id="clue" readonly size=40 value="Click Next to begin"/>
+
+<br/><br/>
+<input type = "text" id="answer" size=40>
+<br/>
+<input type="button" value="Check Answer" onclick="checkAnswer()" id="CH"/>
+<input type="button" value="devTool" onclick="devTool()"/>
+</center> 
+
+<div class="centered" id="image" style="visibility:hidden;">
+<img id="winLoss" src="images/R.png" width="500"/>
+</div>
+<a href="index.html"> click here</a> to go back to home page
+</body>
+</html>
