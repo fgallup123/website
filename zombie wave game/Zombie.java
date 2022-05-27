@@ -8,25 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Zombie extends Actor
 {
-    /**
-     * Act - do whatever the zombie wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    private int x;
-    private int y;
-    
+    private static int numAlive = 0;
     public void act() {
         
     }
     
-    public void setx(int x) {
-        this.x = x;
+    private void death() {
         
     }
     
-    public void sety(int x) {
-        this.y = y;
+    public void alive() {
         
     }
-    
 }

@@ -1,4 +1,5 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
+//import java.lang.math;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class MyWorld here.
@@ -8,23 +9,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    private int round;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1);
+        this.round = 6;
     }
     
     public void act() {
-   
+        generateZombies();
         
     }
     
     public void generateZombies() {
-        for(int i=0; i++; i<numbOf) {
-            int rand = random()*1000 + 1;
+        int numOf = Greenfoot.getRandomNumber(round*round);
+        for(int i=0; i<numOf; i++) {
+            int rand = Greenfoot.getRandomNumber(1000);
             Zombie zombie = new Zombie();
-            addObject(
+            zombie.alive();
+            addObject(zombie, rand, 750);
             
         }
         
