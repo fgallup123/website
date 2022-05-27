@@ -9,10 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
 
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -20,9 +16,17 @@ public class MyWorld extends World
     }
     
     public void act() {
-        int rand = 
-        Zombie zombie = new Zombie();
-        addObject(
+   
+        
+    }
+    
+    public void generateZombies() {
+        for(int i=0; i++; i<numbOf) {
+            int rand = random()*1000 + 1;
+            Zombie zombie = new Zombie();
+            addObject(
+            
+        }
         
     }
 }
