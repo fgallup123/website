@@ -1,0 +1,25 @@
+import greenfoot;
+
+public class Shooter extends Actor {
+    
+    private int healthPoints;
+    public Shooter() {
+        healthPoints = 100;
+        
+    }
+    
+    public void act() {
+    
+    }
+    
+    private void shoot() {
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+}
